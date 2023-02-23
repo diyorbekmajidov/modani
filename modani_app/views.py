@@ -1,13 +1,13 @@
 from django.shortcuts import render
-from .models import Catolog, Sub_category, product
+from .models import Catolog, Sub_category, Product
 from .serialzers import CatologSerializer, Sub_categorySerializer, ProductSerializer
-from rest_framework import APIViev
+from rest_framework.views import APIView
 from rest_framework.request import Request
 from rest_framework.response import Response
 
 # Create your views here.
 
-class CatologListView(APIViev):
+class CatologListView(APIView):
     def post(self, request:Request):
         data = request.data
         serializer = CatologSerializer(data=data)
