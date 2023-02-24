@@ -19,3 +19,17 @@ class CatologListView(APIView):
         catologs = Catolog.objects.all()
         serializer = CatologSerializer(catologs, many=True)
         return Response(serializer.data)
+
+class SubcategoryListView(APIView):
+    def post(self, request:Request):
+        data = request.data
+        serializer = Sub_categorySerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors)
+    def get(self, request:Request,id):
+        sub_categories = Sub_category.objects.filter(catolog=id)
+        serializer = Sub_categorySerializer(sub_categories, many=True)
+        return Response(serializer.data)
+        
