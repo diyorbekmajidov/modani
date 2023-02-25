@@ -28,8 +28,25 @@ class SubcategoryListView(APIView):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors)
+
+class Subcategoryget(APIView):        
     def get(self, request:Request,id):
-        sub_categories = Sub_category.objects.filter(catolog=id)
+        name = Catolog.objects.get(id=id)
+        sub_categories = Sub_category.objects.filter(catolog=name)
+        serializer1 = CatologSerializer(name, many=False)
         serializer = Sub_categorySerializer(sub_categories, many=True)
-        return Response(serializer.data)
+        data = {
+            'catolog': serializer1.data,
+            'sub_categories': serializer.data
+        }
+        return Response(data)
+
+class ProductListView(APIView):
+    def post(self, request:Request):
+        data = request.data
+        serializer = ProductSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors)
         
