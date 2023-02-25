@@ -22,6 +22,22 @@ class Getcatolog(APIView):
         serializer = CatologSerializer(catologs, many=True)
         return Response(serializer.data)
 
+class Updatecatolog(APIView):
+    def post(self, request:Request,id):
+        data = request.data
+        catolog = Catolog.objects.get(id=id)
+        serializer = CatologSerializer(instance=catolog, data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors)
+
+class Deletecatolog(APIView):
+    def post(self, request:Request,id):
+        catolog = Catolog.objects.get(id=id)
+        catolog.delete()
+        return Response("Deleted")
+
 class SubcategoryListView(APIView):
     def post(self, request:Request):
         data = request.data
