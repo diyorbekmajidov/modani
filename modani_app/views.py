@@ -15,6 +15,8 @@ class CatologListView(APIView):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors)
+
+class Getcatolog(APIView):
     def get(self, request:Request):
         catologs = Catolog.objects.all()
         serializer = CatologSerializer(catologs, many=True)
@@ -49,4 +51,16 @@ class ProductListView(APIView):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors)
+
+class Productget(APIView):
+    def get(self, request:Request,id):
+        name = Sub_category.objects.get(id=id)
+        products = Product.objects.filter(sub_category=name)
+        serializer1 = Sub_categorySerializer(name, many=False)
+        serializer = ProductSerializer(products, many=True)
+        data = {
+            'sub_category': serializer1.data,
+            'products': serializer.data
+        }
+        return Response(data)
         
