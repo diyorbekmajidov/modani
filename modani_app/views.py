@@ -59,6 +59,22 @@ class Subcategoryget(APIView):
         }
         return Response(data)
 
+class Subcatogorydelet(APIView):
+    def post(self, request:Request,id):
+        subcotogry = Sub_category.objects.get(id=id)
+        subcotogry.delete()
+        return Response("Delet id")
+
+class UpdateSubcategory(APIView):
+    def post(self, request:Request,id):
+        data = request.data
+        sub_category = Sub_category.objects.get(id=id)
+        serializer = Sub_categorySerializer(instance=sub_category, data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors)
+
 class ProductListView(APIView):
     def post(self, request:Request):
         data = request.data
@@ -79,4 +95,21 @@ class Productget(APIView):
             'products': serializer.data
         }
         return Response(data)
+
+class Productdelet(APIView):
+    def post(self, request:Request,id):
+        product = Product.objects.get(id=id)
+        product.delete()
+        return Response("Delet id")
+
+class UpdateProduct(APIView):
+    def post(self, request:Request,id):
+        data = request.data
+        product = Product.objects.get(id=id)
+        serializer = ProductSerializer(instance=product, data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors)
+        
         
