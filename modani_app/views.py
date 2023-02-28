@@ -4,6 +4,7 @@ from .serialzers import CatologSerializer, Sub_categorySerializer, ProductSerial
 from rest_framework.views import APIView
 from rest_framework.request import Request
 from rest_framework.response import Response
+from rest_framework.generics import RetrieveAPIView
 
 # Create your views here.
 
@@ -47,17 +48,15 @@ class SubcategoryListView(APIView):
             return Response(serializer.data)
         return Response(serializer.errors)
 
+class SubCategory(RetrieveAPIView):
+    queryset = Sub_category.objects.all()
+    serializer_class = Sub_categorySerializer
+
 class Subcategoryget(APIView):        
     def get(self, request:Request,id):
-        name = Catolog.objects.get(id=id)
-        sub_categories = Sub_category.objects.filter(catolog=name)
-        serializer1 = CatologSerializer(name, many=False)
-        serializer = Sub_categorySerializer(sub_categories, many=True)
-        data = {
-            'catolog': serializer1.data,
-            'sub_categories': serializer.data
-        }
-        return Response(data)
+        catalog = Catolog.objects.get(id=id)
+        serializer1 = CatologSerializer(catalog, many=False)
+        return Response({'catolog': serializer1.data})
 
 class Subcatogorydelet(APIView):
     def post(self, request:Request,id):
@@ -111,5 +110,5 @@ class UpdateProduct(APIView):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors)
-        
+
         
