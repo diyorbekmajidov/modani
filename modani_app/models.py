@@ -9,7 +9,7 @@ class Catolog(models.Model):
 
 class Sub_category(models.Model):
     name = models.CharField(max_length=200)
-    catolog = models.ForeignKey(Catolog, on_delete=models.CASCADE)
+    catolog = models.ForeignKey(Catolog, on_delete=models.CASCADE, related_name='sub_category')
     
     def __str__(self):
         return self.name
