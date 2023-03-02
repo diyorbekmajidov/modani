@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import (
-    CatologListView,
+    # CatologListView,
     Getcatolog,
     Updatecatolog,
     Deletecatolog,
@@ -12,11 +12,12 @@ from .views import (
     Productget,
     Productdelet,
     UpdateProduct,
-    SubCategory
+    SubCategory,
+    CatologView,
 )
 
 urlpatterns = [
-    path('catologs/', CatologListView.as_view()),
+    # path('catologs/', CatologListView.as_view()),
     path('sub_catogry/', SubcategoryListView.as_view()),
     path('sub_catogryget/<int:id>/', Subcategoryget.as_view()),
     path('products/', ProductListView.as_view()),
@@ -29,4 +30,5 @@ urlpatterns = [
     path('updateproduct/<int:id>/', UpdateProduct.as_view()),
     path('deletproduct/<int:id>/', Productdelet.as_view()),
     path('subcatogry/<int:pk>/', SubCategory.as_view()),
+    path('catolog/', CatologView.as_view()),
 ]
