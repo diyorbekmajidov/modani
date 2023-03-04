@@ -17,6 +17,7 @@ class Sub_category(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=8, decimal_places=2)
+    quantity = models.IntegerField(default=1)
     description = models.TextField()
     dimensions = models.TextField()
     img = models.TextField()
@@ -26,3 +27,25 @@ class Product(models.Model):
     
     def __str__(self):
         return self.name
+    
+class Sale(models.Model):
+    sale = models.IntegerField()
+    product = models.ManyToManyField(Product) 
+    start = models.DateTimeField()
+    end = models.DateTimeField()
+
+    def __str__(self):
+        return self.sale
+    
+class Cart(models.Model):
+    product = models.ManyToManyField(Product)
+    quantity = models.IntegerField(default=1)
+    
+    def __str__(self):
+        return self.user
+
+class Like(models.Model):
+    product = models.ManyToManyField(Product)
+    comment = models.TextField()
+    def __str__(self):
+        return self.user
