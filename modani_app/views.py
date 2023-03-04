@@ -4,23 +4,19 @@ from .serialzers import CatologSerializer, Sub_categorySerializer, ProductSerial
 from rest_framework.views import APIView
 from rest_framework.request import Request
 from rest_framework.response import Response
-from rest_framework.generics import RetrieveAPIView,CreateAPIView
+from rest_framework.generics import RetrieveAPIView
 
 # Create your views here
 
-class CatologView(CreateAPIView):
-        queryset = Catolog.objects.all()
-        serializer = CatologSerializer
 
-
-# class CatologListView(APIView):
-#     def post(self, request:Request):
-#         data = request.data
-#         serializer = CatologSerializer(data=data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data)
-#         return Response(serializer.errors)
+class CatologListView(APIView):
+    def post(self, request:Request):
+        data = request.data
+        serializer = CatologSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors)
 
 class Getcatolog(APIView):
     def get(self, request:Request):
