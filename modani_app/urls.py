@@ -13,7 +13,8 @@ from .views import (
     Productdelet,
     UpdateProduct,
     SubCategory,
-
+    SaleListView,
+    SaleListUpdate,
 )
 
 urlpatterns = [
@@ -31,6 +32,8 @@ urlpatterns = [
     path('getproduct/<int:id>/', Productget.as_view()),
     path('updateproduct/<int:id>/', UpdateProduct.as_view()),
     path('deletproduct/<int:id>/', Productdelet.as_view()),
-    
+
     path('subcatogry/<int:pk>/', SubCategory.as_view()),
+    path('sale/', SaleListView.as_view()),
+    path('saleupdate/<int:id>/', SaleListUpdate.as_view())
 ]
