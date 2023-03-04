@@ -15,6 +15,15 @@ from .views import (
     SubCategory,
     SaleListView,
     SaleListUpdate,
+    SalelistDelet,
+    CartListView,
+    CartListUpdate,
+    CartListDelet,
+    CartGet,
+    LikeListView,
+    LikeListUpdate,
+    LikelistDelet,
+    LikeGet,
 )
 
 urlpatterns = [
@@ -35,5 +44,16 @@ urlpatterns = [
 
     path('subcatogry/<int:pk>/', SubCategory.as_view()),
     path('sale/', SaleListView.as_view()),
-    path('saleupdate/<int:id>/', SaleListUpdate.as_view())
+    path('saleupdate/<int:id>/', SaleListUpdate.as_view()),
+    path('saledelet/<int:id>/', SalelistDelet.as_view()),
+
+    path('cart/', CartListView.as_view()),
+    path('cartupdate/<int:id>/', CartListUpdate.as_view()),
+    path('cartdelet/<int:id>/', CartListDelet.as_view()),
+    path('cartget/<int:id>/', CartGet.as_view()),
+
+    path('like/', LikeListView.as_view()),
+    path('likeupdate/<int:id>/', LikeListUpdate.as_view()),
+    path('likedelet/<int:id>/', LikelistDelet.as_view()),
+    path('likeget/<int:id>/', LikeGet.as_view()),
 ]
