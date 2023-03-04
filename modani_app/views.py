@@ -17,6 +17,8 @@ from .serialzers import (
     Sub_categorySerializer, 
     ProductSerializer,
     SaleSerializer,
+    CartSerializer,
+    LikeSerializer,
     )
 
 
@@ -144,4 +146,71 @@ class SaleListUpdate(APIView):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors)
+    
+class SalelistDelet(APIView):
+    def post(self, request:Request,id):
+        sale = Sale.objects.get(id=id)
+        sale.delete()
+        return Response("delet id")
         
+class CartListView(APIView):
+    def post(self, request:Request):
+        data = request.data
+        serializer = CartSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors)
+    
+class CartListUpdate(APIView):
+    def post(self, request:Request,id):
+        data =  request.data 
+        cart = Cart.objects.get(id=id)
+        serializer = CartSerializer(instance=cart, data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors)
+    
+class CartListDelet(APIView):
+    def post(self, request:Request,id):
+        cart = Cart.objects.get(id=id)
+        cart.delete()
+        return Response("delet id")
+    
+class CartGet(APIView):
+    def get(self, request:Request,id):
+        cart = Cart.objects.filter(user=id)
+        serializer = CartSerializer(cart, many=True)
+        return Response(serializer.data)
+
+class LikeListView(APIView):
+    def post(self, request:Request):
+        data = request.data
+        serializer = LikeSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors)
+    
+class LikeListUpdate(APIView):
+    def post(self, request:Request,id):
+        data =  request.data 
+        like = Like.objects.get(id=id)
+        serializer = LikeSerializer(instance=like, data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors)
+    
+class LikelistDelet(APIView):
+    def post(self, request:Request,id):
+        like = Like.objects.get(id=id)
+        like.delete()
+        return Response("delet id")
+
+class LikeGet(APIView):
+    def get(self, request:Request,id):
+        like = Like.objects.filter(user=id)
+        serializer = LikeSerializer(like, many=True)
+        return Response(serializer.data)
