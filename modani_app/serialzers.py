@@ -22,3 +22,13 @@ class SaleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sale
         fields = '__all__'
+
+class CartSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Cart
+        fields = '__all__'
+
+class LikeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Like
+        fields = '__all__'
