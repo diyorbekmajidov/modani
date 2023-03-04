@@ -29,7 +29,7 @@ class Product(models.Model):
         return self.name
     
 class Sale(models.Model):
-    sale = models.IntegerField()
+    percent = models.IntegerField()
     product = models.ManyToManyField(Product) 
     start = models.DateTimeField()
     end = models.DateTimeField()
