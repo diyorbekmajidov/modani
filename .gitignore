@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/django,python,venv,visualstudiocode
-# Edit at https://www.toptal.com/developers/gitignore?templates=django,python,venv,visualstudiocode
+# Created by https://www.toptal.com/developers/gitignore/api/django,python,visualstudiocode,venv
+# Edit at https://www.toptal.com/developers/gitignore?templates=django,python,visualstudiocode,venv
 
 ### Django ###
 *.log
@@ -291,4 +291,4 @@ pip-selfcheck.json
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/django,python,venv,visualstudiocode
+# End of https://www.toptal.com/developers/gitignore/api/django,python,visualstudiocode,venv
