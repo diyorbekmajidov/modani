@@ -36,3 +36,27 @@ The modani API has the following endpoints:
 <img src='./modani.png'>
 <br><br><br><br>
 <hr>
+
+<hr>
+
+<div id="add_catalog"> 
+
+**POST** ```modani_app/add_catalog```
+### url to add directory
+
+
+```python
+        input:
+            {
+                "name": str,
+            }
+        return: json ->
+            {
+                "id": int,
+                "name":str,
+            }
+        
+```
+<a href = "#base">^ to the top ^</a> 
+</div>
+<hr>
