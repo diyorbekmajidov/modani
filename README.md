@@ -60,6 +60,7 @@ The modani API has the following endpoints:
 <hr>
 
 <div id="get_catalog">
+
 **GET** ```modani_app/get_catalog```
 ### url to get directory
 ```python
@@ -79,6 +80,7 @@ The modani API has the following endpoints:
 <hr>
 
 <div id="update_catalog">
+
 **POST** ```modani_app/update_catalog/<int:id>```
 ### url to update directory
 ```python
@@ -99,6 +101,7 @@ The modani API has the following endpoints:
 <hr>
 
 <div id="delete_catalog">
+
 **POST** ```modani_app/delete_catalog/<int:id>```
 ### url to delete directory
 ```python
@@ -118,6 +121,7 @@ The modani API has the following endpoints:
 <hr>
 
 <div id="add_subproduct">
+
 **POST** ```modani_app/add_subproduct```
 ### url to add subproduct
 ```python
@@ -139,6 +143,7 @@ The modani API has the following endpoints:
 <hr>
 
 <div id="get_subproduct">
+
 **GET** ```modani_app/get_subproduct/<int:id>```
 ### url to get subproduct
 ```python
@@ -159,6 +164,7 @@ The modani API has the following endpoints:
 <hr>
 
 <div id="update_subproduct">
+
 **POST** ```modani_app/update_subproduct/<int:id>```
 ### url to update subproduct
 ```python
@@ -200,4 +206,201 @@ The modani API has the following endpoints:
 <a href = "#base">^ to the top ^</a>
 </div>
 <hr>
+
+<div id="add_product">
+
+**POST** ```modani_app/add_product```
+### url to add product
+```python
+        input:
+            {
+                "name": str,
+                "sub_catogry": int,
+                "price": int,
+                "description": str,
+                "image": str,
+                "img_dimensions": str,
+                "dimensions": str,
+                "features": str,
+                "quantity": int,
+
+            }
+        return: json ->
+            {
+                "id": int,
+                "name":str,
+                "sub_catogry":int,
+                "price":int,
+                "description":str,
+                "image":str,
+                "img_dimensions": str,
+                "dimensions": str,
+                "features": str,
+                "quantity": int,
+            }
+        
+```
+<a href = "#base">^ to the top ^</a>
+</div>
+<hr>
+
+<div id="get_product">
+
+**GET** ```modani_app/get_product/<int:id>```
+### url to get product
+```python
+        input:
+            {
+                "id": int,
+            }
+        return: json ->
+            {
+                "id": int,
+                "name":str,
+                "sub_catogry":int,
+                "price":int,
+                "description":str,
+                "image":str,
+                "img_dimensions": str,
+                "dimensions": str,
+                "features": str,
+                "quantity": int,
+            }
+        
+```
+<a href = "#base">^ to the top ^</a>
+</div>
+<hr>
+
+<div id="update_product">
+
+**POST** ```modani_app/update_product/<int:id>```
+### url to update product
+```python
+        input:
+            {
+                "id": int,
+                "name": str,
+                "sub_catogry": int,
+                "price": int,
+                "description": str,
+                "image": str,
+                "img_dimensions": str,
+                "dimensions": str,
+                "features": str,
+                "quantity": int,
+            }
+        return: json ->
+            {
+                "id": int,
+                "name":str,
+                "sub_catogry":int,
+                "price":int,
+                "description":str,
+                "image":str,
+                "img_dimensions": str,
+                "dimensions": str,
+                "features": str,
+                "quantity": int,
+            }
+        
+```
+<a href = "#base">^ to the top ^</a>
+</div>
+<hr>
+
+<div id="delete_product">
+
+**POST** ```modani_app/delete_product/<int:id>```
+### url to delete product
+```python
+        input:
+            {
+                "id": int,
+            }
+        return: json ->
+            {
+                "id": int,
+                "name":str,
+                "sub_catogry":int,
+                "price":int,
+                "description":str,
+                "image":str,
+                "img_dimensions": str,
+                "dimensions": str,
+                "features": str,
+                "quantity": int,
+            }
+        
+```
+<a href = "#base">^ to the top ^</a>
+</div>
+<hr>
+
+<div id="add_cart">
+
+**POST** ```modani_app/add_cart```
+### url to add cart
+```python
+        input:
+            {
+                "product": int,
+                "quantity": int,
+            }
+        return: json ->
+            {
+                "id": int,
+                "product":int,
+                "quantity":int,
+            }
+        
+```
+<a href = "#base">^ to the top ^</a>
+</div>
+<hr>
+
+<div id="get_cart">
+
+**GET** ```modani_app/get_cart/<int:id>```
+### url to get cart
+```python
+        input:
+            {
+                "id": int,
+            }
+        return: json ->
+            {
+                "id": int,
+                "product":int,
+                "quantity":int,
+            }
+        
+```
+<a href = "#base">^ to the top ^</a>
+</div>
+<hr>
+
+<div id="update_cart">
+
+**POST** ```modani_app/update_cart/<int:id>```
+### url to update cart
+```python
+        input:
+            {
+                "id": int,
+                "product": int,
+                "quantity": int,
+            }
+        return: json ->
+            {
+                "id": int,
+                "product":int,
+                "quantity":int,
+            }
+        
+```
+<a href = "#base">^ to the top ^</a>
+</div>
+<hr>
+
 
