@@ -4,8 +4,7 @@ The modani API has the following endpoints:
 
 |method   |endpoint   |description   |
 | ------------- |:-------------:| -----:|
-|POST   |catolog/   |add catolog  |
-|GET   |getcatolog/   |get catolog  |
-|GET   |catolog/deletcatolog/<int:id>/  |delete catolog   |
-|POST   |catolog/updatecatolog/<int:id>/   |update catolog   |
-
+|POST   |<a href = "#add_catalog">`catologs/`</a>|add catolog  |
+|GET  |<a href = "#get_catalog">`catologs/`</a>|get catologs  |
+|POST  |<a href = "#update_catalog">`catologs/<int:id>/`</a>|update catolog by id  |
+|DELETE  |<a href = "#delete_catalog">`catologs/<int:id>/`</a>|delete catolog by id  |
