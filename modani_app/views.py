@@ -152,7 +152,13 @@ class SalelistDelet(APIView):
         sale = Sale.objects.get(id=id)
         sale.delete()
         return Response("delet id")
-        
+
+class SaleListGet(APIView):
+    def get(self, request:Request):
+        sale = Sale.objects.all()
+        serializer = SaleSerializer(sale, many=True)
+        return Response(serializer.data)
+
 class CartListView(APIView):
     def post(self, request:Request):
         data = request.data
