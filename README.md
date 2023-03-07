@@ -2,8 +2,9 @@
 
 The modani API has the following endpoints:
 
-*   [GET /api/v1/](https://majidovdiyorbek.pythonanywhere.com/api/v1/)
-*   [GET /api/v1/](https://majidovdiyorbek.pythonanywhere.com/api/v1/)
-*   [GET /api/v1/](https://majidovdiyorbek.pythonanywhere.com/api/v1/)
-*   [GET /api/v1/](https://majidovdiyorbek.pythonanywhere.com/api/v1/)
-*   [GET /api/v1/](https://majidovdiyorbek.pythonanywhere.com/api/v1/)
+*   [POST /api/v1/](https://majidovdiyorbek.pythonanywhere.com/api/catologs/)
+*  [GET /api/v1/](https://majidovdiyorbek.pythonanywhere.com/api/getcatolog/)
+*  [GET /api/v1/](https://majidovdiyorbek.pythonanywhere.com/api/deletcatolog/<int:id>/)
+*  [GET /api/v1/](https://majidovdiyorbek.pythonanywhere.com/api/updatecatolog/<int:id>/)
+
+*  [POST /api/v1/](https://majidovdiyorbek.pythonanywhere.com/api/sub_catogry/)
