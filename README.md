@@ -29,3 +29,10 @@ The modani API has the following endpoints:
 |GET  |<a href = "#get_like">`likeget/<int:id>/`</a>|get likes      |
 |POST  |<a href = "#update_like">`likeupdate/<int:id>/`</a>|update like by id       |
 |POST  |<a href = "#delete_like">`likedelet/<int:id>/`</a>|delete like by id    |
+
+
+# Model
+## you can find this image from [this link](https://app.diagrams.net/#G1Kt5Z4bO88bhWJrlhcsGTbzqfw991eCt7)
+<img src='./modani.png'>
+<br><br><br><br>
+<hr>
