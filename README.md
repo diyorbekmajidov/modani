@@ -1,4 +1,4 @@
-<https://majidovdiyorbek.pythonanywhere.com/admin/>
+<https://majidovdiyorbek.pythonanywhere.com/>
 
 The modani API has the following endpoints:
 
@@ -8,3 +8,4 @@ The modani API has the following endpoints:
 *  [GET /api/v1/](https://majidovdiyorbek.pythonanywhere.com/api/updatecatolog/<int:id>/)
 
 *  [POST /api/v1/](https://majidovdiyorbek.pythonanywhere.com/api/sub_catogry/)
+*  [GET ](https://majidovdiyorbek.pythonanywhere.com/api/getsub_catogry/)
