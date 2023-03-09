@@ -403,4 +403,214 @@ The modani API has the following endpoints:
 </div>
 <hr>
 
+<div id="delete_cart">
+
+**POST** ```modani_app/delete_cart/<int:id>```
+### url to delete cart
+```python
+        input:
+            {
+                "id": int,
+            }
+        return: json ->
+            {
+                "id": int,
+                "product":int,
+                "quantity":int,
+            }
+        
+```
+<a href = "#base">^ to the top ^</a>
+</div>
+<hr>
+
+<div id="add_sale">
+
+**POST** ```modani_app/add_sale```
+### url to add sale
+```python
+        input:
+            {
+                "product": list,
+                "quantity": int,
+                "percent": int,
+                "date": str,
+            }
+        return: json ->
+            {
+                "id": int,
+                "product":list,
+                "quantity":int,
+                "percent":int,
+                "date":str,
+            }
+        
+```
+<a href = "#base">^ to the top ^</a>
+</div>
+<hr>
+
+<div id="get_sale">
+
+**GET** ```modani_app/get_sale/<int:id>```
+### url to get sale
+```python
+        input:
+            {
+                "id": int,
+            }
+        return: json ->
+            {
+                "id": int,
+                "product":list,
+                "quantity":int,
+                "percent":int,
+                "date":str,
+            }
+        
+```
+<a href = "#base">^ to the top ^</a>
+</div>
+<hr>
+
+<div id="update_sale">
+
+**POST** ```modani_app/update_sale/<int:id>```
+### url to update sale
+```python
+        input:
+            {
+                "id": int,
+                "product": list,
+                "quantity": int,
+                "percent": int,
+                "date": str,
+            }
+        return: json ->
+            {
+                "id": int,
+                "product":list,
+                "quantity":int,
+                "percent":int,
+                "date":str,
+            }
+        
+```
+<a href = "#base">^ to the top ^</a>
+</div>
+<hr>
+
+<div id="delete_sale">
+
+**POST** ```modani_app/delete_sale/<int:id>```
+### url to delete sale
+```python
+        input:
+            {
+                "id": int,
+            }
+        return: json ->
+            {
+                "id": int,
+                "product":list,
+                "quantity":int,
+                "percent":int,
+                "date":str,
+            }
+        
+```
+<a href = "#base">^ to the top ^</a>
+</div>
+<hr>
+
+<div id="add_like">
+
+**POST** ```modani_app/add_like```
+### url to add like
+```python
+        input:
+            {
+                "product": int,
+                "comment": str,
+            }
+        return: json ->
+            {
+                "id": int,
+                "product":int,
+                "comment":str,
+            }
+        
+```
+<a href = "#base">^ to the top ^</a>
+</div>
+<hr>
+
+<div id="get_like">
+
+**GET** ```modani_app/get_like/<int:id>```
+### url to get like
+```python
+        input:
+            {
+                "id": int,
+            }
+        return: json ->
+            {
+                "id": int,
+                "product":int,
+                "comment":str,
+            }
+        
+```
+<a href = "#base">^ to the top ^</a>
+</div>
+<hr>
+
+<div id="update_like">
+
+**POST** ```modani_app/update_like/<int:id>```
+### url to update like
+```python
+        input:
+            {
+                "id": int,
+                "product": int,
+                "comment": str,
+            }
+        return: json ->
+            {
+                "id": int,
+                "product":int,
+                "comment":str,
+            }
+        
+```
+<a href = "#base">^ to the top ^</a>
+</div>
+<hr>
+
+<div id="delete_like">
+
+**POST** ```modani_app/delete_like/<int:id>```
+### url to delete like
+```python
+        input:
+            {
+                "id": int,
+            }
+        return: json ->
+            {
+                "id": int,
+                "product":int,
+                "comment":str,
+            }
+        
+```
+<a href = "#base">^ to the top ^</a>
+</div>
+<hr>
+
+
+
+
 
