@@ -220,3 +220,12 @@ class LikeGet(APIView):
         like = Like.objects.filter(user=id)
         serializer = LikeSerializer(like, many=True)
         return Response(serializer.data)
+    
+class LocationListView(APIView):
+    def post(self, request:Request):
+        data = request.data
+        serializer = LocationSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors)
