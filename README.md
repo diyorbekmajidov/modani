@@ -29,6 +29,7 @@ The modani API has the following endpoints:
 |GET  |<a href = "#get_like">`likeget/<int:id>/`</a>|get likes      |
 |POST  |<a href = "#update_like">`likeupdate/<int:id>/`</a>|update like by id       |
 |POST  |<a href = "#delete_like">`likedelet/<int:id>/`</a>|delete like by id    |
+|GET   |<a href =  "#search">`search/`</a>|search product by name        |
 
 
 # Model
@@ -609,6 +610,34 @@ The modani API has the following endpoints:
 <a href = "#base">^ to the top ^</a>
 </div>
 <hr>
+
+<div id="search">
+
+**GET** ```api/search/<str:search>```
+### url to search
+```python
+        input:
+            {
+                "search": str,
+            }
+        return: json ->
+            {
+                "id": int,
+                "name":str,
+                "price":int,
+                "description":str,
+                "image":str,
+                "category":int,
+                "brand":int,
+                "quantity":int,
+            }
+        
+```
+<a href = "#base">^ to the top ^</a>
+</div>
+<hr>
+
+
 
 
 
