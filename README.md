@@ -41,7 +41,7 @@ The modani API has the following endpoints:
 
 <div id="add_catalog"> 
 
-**POST** ```modani_app/add_catalog```
+**POST** ```api/add_catalog```
 ### url to add directory
 ```python
         input:
@@ -61,7 +61,7 @@ The modani API has the following endpoints:
 
 <div id="get_catalog">
 
-**GET** ```modani_app/get_catalog```
+**GET** ```api/get_catalog```
 ### url to get directory
 ```python
         input:
@@ -81,7 +81,7 @@ The modani API has the following endpoints:
 
 <div id="update_catalog">
 
-**POST** ```modani_app/update_catalog/<int:id>```
+**POST** ```api/update_catalog/<int:id>```
 ### url to update directory
 ```python
         input:
@@ -102,7 +102,7 @@ The modani API has the following endpoints:
 
 <div id="delete_catalog">
 
-**POST** ```modani_app/delete_catalog/<int:id>```
+**POST** ```api/delete_catalog/<int:id>```
 ### url to delete directory
 ```python
         input:
@@ -122,7 +122,7 @@ The modani API has the following endpoints:
 
 <div id="add_subproduct">
 
-**POST** ```modani_app/add_subproduct```
+**POST** ```api/add_subproduct```
 ### url to add subproduct
 ```python
         input:
@@ -144,7 +144,7 @@ The modani API has the following endpoints:
 
 <div id="get_subproduct">
 
-**GET** ```modani_app/get_subproduct/<int:id>```
+**GET** ```api/get_subproduct/<int:id>```
 ### url to get subproduct
 ```python
         input:
@@ -165,7 +165,7 @@ The modani API has the following endpoints:
 
 <div id="update_subproduct">
 
-**POST** ```modani_app/update_subproduct/<int:id>```
+**POST** ```api/update_subproduct/<int:id>```
 ### url to update subproduct
 ```python
         input:
@@ -188,7 +188,7 @@ The modani API has the following endpoints:
 
 <div id="delete_subproduct">
 
-**POST** ```modani_app/delete_subproduct/<int:id>```
+**POST** ```api/delete_subproduct/<int:id>```
 ### url to delete subproduct
 ```python
         input:
@@ -209,7 +209,7 @@ The modani API has the following endpoints:
 
 <div id="add_product">
 
-**POST** ```modani_app/add_product```
+**POST** ```api/add_product```
 ### url to add product
 ```python
         input:
@@ -246,7 +246,7 @@ The modani API has the following endpoints:
 
 <div id="get_product">
 
-**GET** ```modani_app/get_product/<int:id>```
+**GET** ```api/get_product/<int:id>```
 ### url to get product
 ```python
         input:
@@ -274,7 +274,7 @@ The modani API has the following endpoints:
 
 <div id="update_product">
 
-**POST** ```modani_app/update_product/<int:id>```
+**POST** ```api/update_product/<int:id>```
 ### url to update product
 ```python
         input:
@@ -311,7 +311,7 @@ The modani API has the following endpoints:
 
 <div id="delete_product">
 
-**POST** ```modani_app/delete_product/<int:id>```
+**POST** ```api/delete_product/<int:id>```
 ### url to delete product
 ```python
         input:
@@ -339,7 +339,7 @@ The modani API has the following endpoints:
 
 <div id="add_cart">
 
-**POST** ```modani_app/add_cart```
+**POST** ```api/add_cart```
 ### url to add cart
 ```python
         input:
@@ -361,7 +361,7 @@ The modani API has the following endpoints:
 
 <div id="get_cart">
 
-**GET** ```modani_app/get_cart/<int:id>```
+**GET** ```api/get_cart/<int:id>```
 ### url to get cart
 ```python
         input:
@@ -382,7 +382,7 @@ The modani API has the following endpoints:
 
 <div id="update_cart">
 
-**POST** ```modani_app/update_cart/<int:id>```
+**POST** ```api/update_cart/<int:id>```
 ### url to update cart
 ```python
         input:
@@ -405,7 +405,7 @@ The modani API has the following endpoints:
 
 <div id="delete_cart">
 
-**POST** ```modani_app/delete_cart/<int:id>```
+**POST** ```api/delete_cart/<int:id>```
 ### url to delete cart
 ```python
         input:
@@ -426,7 +426,7 @@ The modani API has the following endpoints:
 
 <div id="add_sale">
 
-**POST** ```modani_app/add_sale```
+**POST** ```api/add_sale```
 ### url to add sale
 ```python
         input:
@@ -452,7 +452,7 @@ The modani API has the following endpoints:
 
 <div id="get_sale">
 
-**GET** ```modani_app/get_sale/<int:id>```
+**GET** ```api/get_sale/<int:id>```
 ### url to get sale
 ```python
         input:
@@ -475,7 +475,7 @@ The modani API has the following endpoints:
 
 <div id="update_sale">
 
-**POST** ```modani_app/update_sale/<int:id>```
+**POST** ```api/update_sale/<int:id>```
 ### url to update sale
 ```python
         input:
@@ -502,7 +502,7 @@ The modani API has the following endpoints:
 
 <div id="delete_sale">
 
-**POST** ```modani_app/delete_sale/<int:id>```
+**POST** ```api/delete_sale/<int:id>```
 ### url to delete sale
 ```python
         input:
@@ -525,7 +525,7 @@ The modani API has the following endpoints:
 
 <div id="add_like">
 
-**POST** ```modani_app/add_like```
+**POST** ```api/add_like```
 ### url to add like
 ```python
         input:
@@ -547,7 +547,7 @@ The modani API has the following endpoints:
 
 <div id="get_like">
 
-**GET** ```modani_app/get_like/<int:id>```
+**GET** ```api/get_like/<int:id>```
 ### url to get like
 ```python
         input:
@@ -568,7 +568,7 @@ The modani API has the following endpoints:
 
 <div id="update_like">
 
-**POST** ```modani_app/update_like/<int:id>```
+**POST** ```api/update_like/<int:id>```
 ### url to update like
 ```python
         input:
@@ -591,7 +591,7 @@ The modani API has the following endpoints:
 
 <div id="delete_like">
 
-**POST** ```modani_app/delete_like/<int:id>```
+**POST** ```api/delete_like/<int:id>```
 ### url to delete like
 ```python
         input:
