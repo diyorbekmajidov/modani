@@ -24,7 +24,8 @@ from .views import (
     LikeListUpdate,
     LikelistDelet,
     LikeGet,
-    SaleListGet
+    SaleListGet,
+    SearchView
 )
 
 urlpatterns = [
@@ -59,4 +60,6 @@ urlpatterns = [
     path('likeupdate/<int:id>/', LikeListUpdate.as_view()),
     path('likedelet/<int:id>/', LikelistDelet.as_view()),
     path('likeget/<int:id>/', LikeGet.as_view()),
+
+    path('search/', SearchView.as_view()),
 ]
