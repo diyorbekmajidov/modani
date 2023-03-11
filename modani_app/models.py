@@ -8,11 +8,11 @@ class Catolog(models.Model):
         return self.name
 
 class Sub_category(models.Model):
-    name = models.CharField(max_length=200)
+    names = models.CharField(max_length=200)
     catolog = models.ForeignKey(Catolog, on_delete=models.CASCADE, related_name='sub_category')
     
     def __str__(self):
-        return self.name
+        return self.names
 
 class Product(models.Model):
     name = models.CharField(max_length=200)
