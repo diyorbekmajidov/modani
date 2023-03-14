@@ -154,9 +154,9 @@ class SalelistDelet(APIView):
         return Response("delet id")
 
 class SaleListGet(APIView):
-    def get(self, request:Request):
-        sale = Sale.objects.all()
-        serializer = SaleSerializer(sale, many=True)
+    def get(self, request:Request,id):
+        sale = Sale.objects.get(id=id)
+        serializer = SaleSerializer(sale, many=False)
         return Response(serializer.data)
 
 class CartListView(APIView):
@@ -186,7 +186,7 @@ class CartListDelet(APIView):
     
 class CartGet(APIView):
     def get(self, request:Request,id):
-        cart = Cart.objects.filter(user=id)
+        cart = Cart.objects.filter(id=id)
         serializer = CartSerializer(cart, many=True)
         return Response(serializer.data)
 
@@ -217,8 +217,8 @@ class LikelistDelet(APIView):
 
 class LikeGet(APIView):
     def get(self, request:Request,id):
-        like = Like.objects.filter(user=id)
-        serializer = LikeSerializer(like, many=True)
+        like = Like.objects.get(id=id)
+        serializer = LikeSerializer(like, many=False)
         return Response(serializer.data)
     
 class SearchView(APIView):

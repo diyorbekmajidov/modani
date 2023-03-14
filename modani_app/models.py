@@ -15,18 +15,18 @@ class Sub_category(models.Model):
         return self.names
 
 class Product(models.Model):
-    name = models.CharField(max_length=200)
+    product_name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=8, decimal_places=2)
     quantity = models.IntegerField(default=1)
-    description = models.TextField()
-    dimensions = models.TextField()
-    img = models.TextField()
-    img_dimensions = models.TextField()
-    features = models.TextField()
+    description = models.TextField(max_length=500)
+    dimensions = models.TextField(max_length=500)
+    img = models.TextField(max_length=500)
+    img_dimensions = models.TextField(max_length=500)
+    features = models.TextField(max_length=500)
     sub_category = models.ForeignKey(Sub_category, on_delete=models.CASCADE)
     
     def __str__(self):
-        return self.name
+        return self.product_name
     
 class Sale(models.Model):
     percent = models.IntegerField()
@@ -35,17 +35,17 @@ class Sale(models.Model):
     end = models.DateTimeField()
 
     def __str__(self):
-        return self.sale
+        return 'Sale'
     
 class Cart(models.Model):
     product = models.ManyToManyField(Product)
     quantity = models.IntegerField(default=1)
     
     def __str__(self):
-        return self.user
+        return 'Cart'
 
 class Like(models.Model):
     product = models.ManyToManyField(Product)
-    comment = models.TextField()
+    comment = models.TextField(max_length=50)
     def __str__(self):
-        return self.user
+        return 'Like'
