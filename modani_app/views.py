@@ -3,6 +3,8 @@ from rest_framework.views import APIView
 from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.generics import RetrieveAPIView
+from django.db.models import Q
+
 
 from .models import (
     Catolog, 
@@ -224,6 +226,6 @@ class LikeGet(APIView):
 class SearchView(APIView):
     def get(self, request:Request):
         search = request.GET.get('search')
-        products = Product.objects.filter(name__icontains=search)
-        serializer = ProductSerializer(products, many=True)
+        posts = Product.objects.filter(Q(product_name__icontains = search) | Q(price__icontains = search))
+        serializer = ProductSerializer(posts, many=True)
         return Response(serializer.data)
