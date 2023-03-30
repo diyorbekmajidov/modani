@@ -133,6 +133,7 @@ class UpdateProduct(APIView):
 class SaleListView(APIView):
     def post(self, request:Request):
         data = request.data
+        print(data['start'])
         serializer = SaleSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
@@ -157,9 +158,22 @@ class SalelistDelet(APIView):
 
 class SaleListGet(APIView):
     def get(self, request:Request,id):
-        sale = Sale.objects.get(id=id)
-        serializer = SaleSerializer(sale, many=False)
-        return Response(serializer.data)
+        sale = Sale.objects.filter(id=id)
+        if sale.exists():
+            serializer = SaleSerializer(sale, many=False)
+            return Response(serializer.data)
+        return Response("Not found")
+
+
+class SaleGETAll(APIView):
+    def get(self, request:Request):
+        try:
+            sales = Sale.objects.all()
+            serializer = SaleSerializer(sales, many=True)
+            return Response(serializer.data)
+        except sales.DoesNotExist:
+            return Response("Not found")
+
 
 class CartListView(APIView):
     def post(self, request:Request):
