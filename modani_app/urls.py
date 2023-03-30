@@ -25,6 +25,7 @@ from .views import (
     LikelistDelet,
     LikeGet,
     SaleListGet,
+    SaleGETAll,
     SearchView
 )
 
@@ -62,4 +63,5 @@ urlpatterns = [
     path('likeget/<int:id>/', LikeGet.as_view()),
 
     path('search/', SearchView.as_view()),
+    path('saleget/', SaleGETAll.as_view())
 ]
